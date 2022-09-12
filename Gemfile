@@ -19,3 +19,6 @@ end
 group :production do
   gem "pg"
 end
+
+
+ ruby "3.1.2"
