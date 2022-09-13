@@ -105,113 +105,61 @@ set :default_content_type, 'application/json'
   
     # customer table
   
-  #   get '/customers' do
-  #    customer = Customer.all.order(:customer_name)
-  #     customer.to_json
-  #   end
+    get '/customers' do
+     customer = Customer.all.order(:customer_name)
+      customer.to_json
+    end
   
-  #   get '/customer/:id' do
-  #     customer = Customer.find(params[:id])
-  #     customer.to_json
-  #   end
+    get '/customer/:id' do
+      customer = Customer.find(params[:id])
+      customer.to_json
+    end
   
-  #   post '/customer' do
-  #     pat = Customer.create(
-  #       first_name: params[:first_name],
-  #       last_name: params[:last_name],
-  #       gender: params[:gender],
-  #       email: params[:email],
-  #       phone: params[:phone],
-  #       address: params[:address],
-  #       town: params[:town],
-  #       service_name: params[:service_name],
-  #       service_type: params[:service_type],
-  #       service_id: params[:service_id]
-  #     )
-  #     pat.to_json
-  #   end
+    post '/customer' do
+      pat = Customer.create(
+        first_name: params[:first_name],
+        last_name: params[:last_name],
+        gender: params[:gender],
+        email: params[:email],
+        phone: params[:phone],
+        address: params[:address],
+        town: params[:town],
+        service_name: params[:service_name],
+        service_type: params[:service_type],
+        service_id: params[:service_id]
+      )
+      pat.to_json
+    end
   
-  #   patch '/customer/:id' do
-  #     patched = Customer.find(params[:id])
-  #     patched.update(
-  #       phone: params[:phone],
-  #       address: params[:address],
-  #       town: params[:town],
-  #       service_name: params[:service_name],
-  #       service_type: params[:service_type],
-  #       service_id: params[:service_id]
-  #     )
-  #     patched.to_json
-  #   end
+    patch '/customer/:id' do
+      patched = Customer.find(params[:id])
+      patched.update(
+        phone: params[:phone],
+        address: params[:address],
+        town: params[:town],
+        service_name: params[:service_name],
+        service_type: params[:service_type],
+        service_id: params[:service_id]
+      )
+      patched.to_json
+    end
   
-  #   put '/customer' do
-  #     patched = Customer.find(params[:id])
-  #     patched.update(
-  #       phone: params[:phone],
-  #       address: params[:address],
-  #       town: params[:town],
-  #       service_name: params[:service_name],
-  #       service_type: params[:service_type],
-  #       service_id: params[:service_id]
-  #     )
-  #     patched.to_json
-  #   end
+    put '/customer' do
+      patched = Customer.find(params[:id])
+      patched.update(
+        phone: params[:phone],
+        address: params[:address],
+        town: params[:town],
+        service_name: params[:service_name],
+        service_type: params[:service_type],
+        service_id: params[:service_id]
+      )
+      patched.to_json
+    end
   
-  #   delete '/customer/:id' do
-  #     deleted = Customer.find(params[:id])
-  #     deleted.destroy
-  #     deleted.to_json
-  #   end
-  # end
-
-
-  get '/customers' do
-    loc =Customer.all.order(:first_name)
-    loc.to_json
-  end
-
-  get '/customers/:id' do
-    loc = Customer.find(params[:id])
-    loc.to_json
-  end
-
-  post '/customers' do
-    loc = Customer.create(
-      first_name: params[:first_name],
-      last_name: params[:last_name],
-      phone: params[:phone],
-      town: params[:town],
-      service_type: params[:service_type],
-      service_id: params[:service_id]
-    )
-    loc.to_json
-  end
-
-  patch '/customers/:id' do
-    patched = Customer.find(params[:id])
-    patched.update(
-      phone: params[:phone],
-      address: params[:address],
-      department: params[:department],
-      town: params[:town]
-    )
-    patched.to_json
-  end
-
-  put '/customers' do
-    patched = Customer.find(params[:id])
-    patched.update(
-      phone: params[:phone],
-      address: params[:address],
-      department: params[:department],
-      town: params[:town]
-    )
-    patched.to_json
-  end
-
-  delete '/customers/:id' do
-    deleted = Customer.find(params[:id])
-    puts deleted
-    deleted.destroy
-    deleted.to_json
+    delete '/customer/:id' do
+      deleted = Customer.find(params[:id])
+      deleted.destroy
+      deleted.to_json
+    end
   end
