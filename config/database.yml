@@ -5,4 +5,10 @@ development:
 production:
   adapter: postgresql
   database: db/production.sqlite3
-Footer
+
+  production:
+  adapter: postgresql
+  encoding: unicode
+  database: production
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: 5
