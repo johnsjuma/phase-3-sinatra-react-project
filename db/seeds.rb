@@ -13,7 +13,12 @@ for i in service
   )
   Customer.create(
     first_name: Faker::Name.name,
-    gender: "M", 
+    last_name: Faker::Name.last_name,
+    gender: "M",
+    email:"learning@gmail.com", 
+    address:Faker::Address.street_address,
+    phone:Faker::PhoneNumber.phone_number,
+    town:Faker::Address.city ,
     service_name: service[rand(0...service.size)],
     service_id: rand(1..10)
   )
