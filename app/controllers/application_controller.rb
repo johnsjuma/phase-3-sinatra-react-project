@@ -110,12 +110,12 @@ set :default_content_type, 'application/json'
       customer.to_json
     end
   
-    get '/customer/:id' do
+    get '/customers/:id' do
       customer = Customer.find(params[:id])
       customer.to_json
     end
   
-    post '/customer' do
+    post '/customers' do
       pat = Customer.create(
         first_name: params[:first_name],
         last_name: params[:last_name],
@@ -131,7 +131,7 @@ set :default_content_type, 'application/json'
       pat.to_json
     end
   
-    patch '/customer/:id' do
+    patch '/customers/:id' do
       patched = Customer.find(params[:id])
       patched.update(
         phone: params[:phone],
@@ -144,7 +144,7 @@ set :default_content_type, 'application/json'
       patched.to_json
     end
   
-    put '/customer' do
+    put '/customers' do
       patched = Customer.find(params[:id])
       patched.update(
         phone: params[:phone],
@@ -157,7 +157,7 @@ set :default_content_type, 'application/json'
       patched.to_json
     end
   
-    delete '/customer/:id' do
+    delete '/customers/:id' do
       deleted = Customer.find(params[:id])
       deleted.destroy
       deleted.to_json
