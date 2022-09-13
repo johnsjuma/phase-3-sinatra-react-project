@@ -1,52 +1,28 @@
 source "https://rubygems.org"
 
-# A DSL for quickly creating web applications
-# https://github.com/sinatra/sinatra
-gem "sinatra"
+# gem "rails
+gem "sinatra", "~> 2.1"
+gem "thin", "~> 1.8"
+gem "rack-contrib", "~> 2.3"
+gem "rack-cors", "~> 1.1"
+gem "activerecord", "~> 6.1"
+gem "sinatra-activerecord", "~> 2.0"
+gem "rake", "~> 13.0"
+gem "faker", "~> 2.18"
+gem "pg"
+gem "require_all", "~> 3.0"
 
-# A fast and simple web server
-# https://github.com/macournoyer/thin
-gem "thin"
 
-# Rack middleware. Used specifically for parsing the request body into params.
-# https://github.com/rack/rack-contrib
-gem "rack-contrib"
-
-# More Rack middleware! Used to handle CORS requests
-# https://github.com/cyu/rack-cors
-gem "rack-cors"
-
-#active-record download
-gem "activerecord"
-
-#sinatra download
-gem "sinatra-activerecord"
-
-#rake console n commands
-gem "rake"
-
-gem 'psych', '~> 4.0.0'
-
-#Require all files in a folder
-gem "require_all"
-
-gem 'uri'
-
-gem "faker"
-
-#use pry in the development phase only
 group :development do
-  gem "pry"
-  gem "sqlite3"
-
-  # Automatically reload when there are changes
-  # https://github.com/alexch/rerun
+  gem "pry", "~> 0.14.1"
   gem "rerun"
-end
-
-group :production do
-    gem "pg"
+  gem "sqlite3"
 end
 
 
-#  ruby "3.1.2"
+group :test do
+  gem "database_cleaner", "~> 2.0"
+  gem "rack-test", "~> 1.1"
+  gem "rspec", "~> 3.10"
+  gem "rspec-json_expectations", "~> 2.2"
+  end

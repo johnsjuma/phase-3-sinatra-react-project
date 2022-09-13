@@ -25,7 +25,7 @@ set :default_content_type, 'application/json'
         service_type: params[:service_type],
         service_id: params[:service_id]
       )
-      spaAttendant.to_json
+      loc.to_json
     end
   
     patch '/spaAttendant/:id' do
@@ -162,6 +162,4 @@ set :default_content_type, 'application/json'
       deleted.destroy
       deleted.to_json
     end
-  
   end
-  
