@@ -14,9 +14,9 @@ for i in service
   # Customer.create(
       customer1 = Customer.create(first_name:"Eduord ",last_name:"Mendy",gender:"Male",service_name: service[rand(0...service.size)],service_id: rand(1..10)),
     customer2 = Customer.create(first_name:"Jerry",last_name:"Johns",gender:"Male",service_name: service[rand(0...service.size)],service_id: rand(1..10)),
-    customer4 = Customer.create(first_name:"James",last_name:" Oduor",gender:"Male",service_name: service[rand(0...service.size)],service_id: rand(1..10)),
-    customer5 = Customer.create(first_name:"Betty ",last_name:"Konyagi",gender:"Female",service_name: service[rand(0...service.size)],service_id: rand(1..10)),
-    customer6 = Customer.create(first_name:"Eduord",last_name:" Wanyonyi",gender:"Male",service_name: service[rand(0...service.size)],service_id: rand(1..10))
+    customer3 = Customer.create(first_name:"James",last_name:" Oduor",gender:"Male",service_name: service[rand(0...service.size)],service_id: rand(1..10)),
+    customer4 = Customer.create(first_name:"Betty ",last_name:"Konyagi",gender:"Female",service_name: service[rand(0...service.size)],service_id: rand(1..10)),
+    customer5 = Customer.create(first_name:"Eduord",last_name:" Wanyonyi",gender:"Male",service_name: service[rand(0...service.size)],service_id: rand(1..10))
 #  )
   Service.create(
     service_name: i
